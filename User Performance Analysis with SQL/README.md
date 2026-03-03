@@ -2,7 +2,7 @@
 
 ## About This Project
 
-As part of my data science and SQL learning journey, I built this project to practise writing real-world SQL queries against a structured dataset. The dataset comes from an online learning platform and tracks how users engage with coding questions over time — including how many they get right, how many they get wrong, and how many points they accumulate.
+As part of my data science and SQL learning journey, I built this project to practise writing real-world SQL queries against a structured dataset. The dataset comes from an online learning platform and tracks how users engage with coding questions over time, including how many they get right, how many they get wrong, and how many points they accumulate.
 
 The goal was simple: use SQL to turn raw submission data into meaningful insights about user behaviour and performance.
 
