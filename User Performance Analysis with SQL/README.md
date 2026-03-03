@@ -238,17 +238,17 @@ ORDER BY week_no, total_points DESC;
 
 ## SQL Concepts Practised
 
-- **Aggregation** — `COUNT`, `SUM`, `AVG` to summarise submission data
-- **Date functions** — `TO_CHAR()`, `EXTRACT()`, and `DATE()` to group by hour, day, week, and month
-- **Conditional aggregation** — `CASE WHEN` to separate correct from incorrect submissions
-- **Window functions** — `DENSE_RANK()` and `LAG()` to rank users and compare across time periods
-- **CTEs** — breaking complex logic into readable, reusable steps with `WITH`
+- **Aggregation**: `COUNT`, `SUM`, `AVG` to summarise submission data
+- **Date functions**: `TO_CHAR()`, `EXTRACT()`, and `DATE()` to group by hour, day, week, and month
+- **Conditional aggregation**: `CASE WHEN` to separate correct from incorrect submissions
+- **Window functions**: `DENSE_RANK()` and `LAG()` to rank users and compare across time periods
+- **CTEs**: breaking complex logic into readable, reusable steps with `WITH`
 
 ---
 
 ## What I Learned
 
-Working through this project helped me get comfortable with some of the trickier parts of SQL that often come up in data analytics roles. Conditional aggregation with `CASE WHEN` was particularly useful for splitting a single column (points) into multiple meaningful metrics. Using `DENSE_RANK()` inside a CTE to produce per-day and per-week rankings felt like a big step up from basic `GROUP BY` queries. The extended questions pushed me further — using `LAG()` to track week-on-week change was a great introduction to time-series thinking in SQL, and building the consistency analysis made me think about user behaviour in a more nuanced way.
+Working through this project helped me get comfortable with some of the trickier parts of SQL that often come up in data analytics roles. Conditional aggregation with `CASE WHEN` was particularly useful for splitting a single column (points) into multiple meaningful metrics. Using `DENSE_RANK()` inside a CTE to produce per-day and per-week rankings felt like a big step up from basic `GROUP BY` queries. The extended questions pushed me further using `LAG()` to track week-on-week change was a great introduction to time-series thinking in SQL, and building the consistency analysis made me think about user behaviour in a more nuanced way.
 
 ---
 
@@ -259,4 +259,4 @@ Working through this project helped me get comfortable with some of the trickier
 
 ---
 
-*Project by Euodia Sam — February 2026*
+*Project by Euodia Sam - February 2026*
