@@ -2,7 +2,7 @@
 
 ## About This Project
 
-As part of my data science and SQL learning journey, I built this project to practise writing real-world SQL queries against a structured dataset. The dataset comes from an online learning platform and tracks how users engage with coding questions over time — including how many they get right, how many they get wrong, and how many points they accumulate.
+As part of my data science and SQL learning journey, I built this project to practise writing real-world SQL queries against a structured dataset. The dataset comes from an online learning platform and tracks how users engage with coding questions over time including how many they get right, how many they get wrong, and how many points they accumulate.
 
 The goal was simple: use SQL to turn raw submission data into meaningful insights about user behaviour and performance.
 
@@ -128,11 +128,11 @@ WHERE rank <= 10;
 
 ## SQL Concepts Practised
 
-- **Aggregation** — `COUNT`, `SUM`, `AVG` to summarise submission data
-- **Date functions** — `TO_CHAR()` and `EXTRACT()` to group by day and week
-- **Conditional aggregation** — `CASE WHEN` to separate correct from incorrect submissions
-- **Window functions** — `DENSE_RANK()` to rank users within date partitions
-- **CTEs** — breaking complex logic into readable, reusable steps with `WITH`
+- **Aggregation**: `COUNT`, `SUM`, `AVG` to summarise submission data
+- **Date functions**: `TO_CHAR()` and `EXTRACT()` to group by day and week
+- **Conditional aggregation**: `CASE WHEN` to separate correct from incorrect submissions
+- **Window functions**: `DENSE_RANK()` to rank users within date partitions
+- **CTEs**: breaking complex logic into readable, reusable steps with `WITH`
 
 ---
 
@@ -149,4 +149,4 @@ Working through this project helped me get comfortable with some of the trickier
 
 ---
 
-*Project by Euodia Sam — February 2026*
+*Project by Euodia Sam - February 2026*
