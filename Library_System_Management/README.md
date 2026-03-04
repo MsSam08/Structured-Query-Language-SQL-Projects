@@ -35,7 +35,7 @@ The database consists of six interrelated tables:
 ---
 
 ## Database Setup
----
+
 ![Database](https://github.com/MsSam08/Structured-Query-Language-SQL-Projects/blob/main/Library_System_Management/Database%20Setup.png)
 ### Schema Creation
 
