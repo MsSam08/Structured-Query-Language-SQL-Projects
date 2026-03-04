@@ -4,18 +4,18 @@
 
 This is an intermediate-level SQL project where I designed and queried a relational database for a Library Management System. The project covers everything from setting up the database schema and populating it with data, to writing advanced queries involving joins, stored procedures, and window functions.
 
-The aim was to simulate how a real library would track its books, members, employees, and branches — and use SQL to extract useful operational insights from that data.
+The aim was to simulate how a real library would track its books, members, employees, and branches; and use SQL to extract useful operational insights from that data.
 
 ---
 
 ## Objectives
 
 1. **Design and set up a relational database** with properly structured tables and foreign key relationships.
-2. **Perform CRUD operations** — inserting, reading, updating, and deleting records across multiple tables.
+2. **Perform CRUD operations** like inserting, reading, updating, and deleting records across multiple tables.
 3. **Use CTAS (Create Table As Select)** to generate summary and reporting tables from query results.
 4. **Write advanced SQL queries** involving multi-table joins, aggregation, subqueries, and date arithmetic.
 5. **Build stored procedures** to automate book issuance and return workflows with conditional logic.
-6. **Analyse library operations** — including overdue tracking, fine calculation, branch performance, and employee productivity.
+6. **Analyse library operations** including overdue tracking, fine calculation, branch performance, and employee productivity.
 
 ---
 
@@ -138,7 +138,7 @@ HAVING COUNT(*) > 1;
 
 ---
 
-## CTAS — Create Table As Select
+## CTAS - Create Table As Select
 
 ### Task 6: Summarise Issue Count Per Book
 ```sql
@@ -232,7 +232,7 @@ WHERE rs.return_date IS NULL
 ORDER BY days_overdue DESC;
 ```
 
-### Task 14: Stored Procedure — Process a Book Return
+### Task 14: Stored Procedure: Process a Book Return
 **Logic:** When a member returns a book, insert the return record and update the book's status back to 'yes'.
 
 ```sql
@@ -322,7 +322,7 @@ HAVING COUNT(ist.issued_id) > 2
 ORDER BY times_issued_damaged DESC;
 ```
 
-### Task 19: Stored Procedure — Issue a Book
+### Task 19: Stored Procedure: Issue a Book
 **Logic:** Check if the book is available. If yes, issue it and mark it as unavailable. If no, notify the caller.
 
 ```sql
@@ -358,7 +358,7 @@ CALL issue_book('IS155', 'C108', '978-0-553-29698-2', 'E104');
 CALL issue_book('IS156', 'C108', '978-0-375-41398-8', 'E104');
 ```
 
-### Task 20: CTAS — Overdue Books with Fine Calculation
+### Task 20: CTAS: Overdue Books with Fine Calculation
 **Logic:** Each overdue day costs $0.50.
 
 ```sql
@@ -379,19 +379,19 @@ ORDER BY total_fine DESC;
 
 ## SQL Concepts Covered
 
-- **CRUD Operations** — Insert, Select, Update, Delete across multiple tables
-- **Joins** — INNER, LEFT JOIN across up to four tables simultaneously
-- **Aggregation** — `COUNT`, `SUM` with `GROUP BY` and `HAVING`
-- **CTAS** — Creating derived tables from query results for reporting
-- **Subqueries** — Filtering with nested SELECT statements
-- **Stored Procedures** — Reusable procedural logic with conditional branching
-- **Date Arithmetic** — Calculating overdue days and filtering by date intervals
+- **CRUD Operations**: Insert, Select, Update, Delete across multiple tables
+- **Joins**: INNER, LEFT JOIN across up to four tables simultaneously
+- **Aggregation**: `COUNT`, `SUM` with `GROUP BY` and `HAVING`
+- **CTAS**: Creating derived tables from query results for reporting
+- **Subqueries**: Filtering with nested SELECT statements
+- **Stored Procedures**: Reusable procedural logic with conditional branching
+- **Date Arithmetic**: Calculating overdue days and filtering by date intervals
 
 ---
 
 ## What I Learned
 
-This project gave me hands-on experience with relational database design — understanding how foreign keys enforce data integrity across tables was a key takeaway. Writing the stored procedures for issuing and returning books was the most challenging part, as it required combining DML statements with conditional logic inside a single transaction. The overdue fine calculation using CTAS also reinforced how powerful it is to create persistent summary tables directly from query results.
+This project gave me hands-on experience with relational database design, understanding how foreign keys enforce data integrity across tables was a key takeaway. Writing the stored procedures for issuing and returning books was the most challenging part, as it required combining DML statements with conditional logic inside a single transaction. The overdue fine calculation using CTAS also reinforced how powerful it is to create persistent summary tables directly from query results.
 
 ---
 
@@ -402,4 +402,4 @@ This project gave me hands-on experience with relational database design — und
 
 ---
 
-*Project by Euodia Sam — 2026*
+*Project by Euodia Sam*
