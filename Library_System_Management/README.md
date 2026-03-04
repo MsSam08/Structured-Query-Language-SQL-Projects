@@ -36,7 +36,7 @@ The database consists of six interrelated tables:
 
 ## Database Setup
 ---
-![Database](https://github.com/MsSam08/Machine-Learning-projects-AI-DL-included-/blob/main/The%20Customers%20Who%20Disappeared/feture%20importance.png)
+![Database](https://github.com/MsSam08/Structured-Query-Language-SQL-Projects/blob/main/Library_System_Management/Database%20Setup.png)
 ### Schema Creation
 
 ```sql
