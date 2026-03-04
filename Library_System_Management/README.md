@@ -138,7 +138,7 @@ HAVING COUNT(*) > 1;
 
 ---
 
-## CTAS - Create Table As Select
+## CTAS: Create Table As Select
 
 ### Task 6: Summarise Issue Count Per Book
 ```sql
