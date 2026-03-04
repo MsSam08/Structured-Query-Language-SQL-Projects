@@ -8,6 +8,17 @@ The aim was to simulate how a real library would track its books, members, emplo
 
 ---
 
+## Objectives
+
+1. **Design and set up a relational database** with properly structured tables and foreign key relationships.
+2. **Perform CRUD operations** — inserting, reading, updating, and deleting records across multiple tables.
+3. **Use CTAS (Create Table As Select)** to generate summary and reporting tables from query results.
+4. **Write advanced SQL queries** involving multi-table joins, aggregation, subqueries, and date arithmetic.
+5. **Build stored procedures** to automate book issuance and return workflows with conditional logic.
+6. **Analyse library operations** — including overdue tracking, fine calculation, branch performance, and employee productivity.
+
+---
+
 ## Database: `library_db`
 
 The database consists of six interrelated tables:
