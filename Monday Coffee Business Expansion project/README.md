@@ -46,6 +46,8 @@ SELECT
 FROM city
 ORDER BY coffee_consumers_in_millions DESC;
 ```
+Data Output:
+
 ![Database](https://github.com/MsSam08/Structured-Query-Language-SQL-Projects/blob/main/Monday%20Coffee%20Business%20Expansion%20project/QUES%201.png)
 ---
 
@@ -66,7 +68,9 @@ WHERE EXTRACT(YEAR FROM s.sale_date) = 2023
 GROUP BY ci.city_name
 ORDER BY total_revenue DESC;
 ```
+Data Output:
 
+![Database](https://github.com/MsSam08/Structured-Query-Language-SQL-Projects/blob/main/Monday%20Coffee%20Business%20Expansion%20project/QUES%202.png)
 ---
 
 ### Q3. Sales Count for Each Product
