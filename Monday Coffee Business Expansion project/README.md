@@ -30,7 +30,7 @@ The analysis looks at consumer demand, revenue performance, customer behaviour, 
 ---
 ## Database Setup
 
-![Database](https://github.com/MsSam08/Structured-Query-Language-SQL-Projects/blob/main/Library_System_Management/Database%20Setup.png)
+![Database](https://github.com/MsSam08/Structured-Query-Language-SQL-Projects/blob/main/Monday%20Coffee%20Business%20Expansion%20project/schema.png)
 
 ## Questions & SQL Solutions
 
