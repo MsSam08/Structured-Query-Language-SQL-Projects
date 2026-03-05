@@ -1,5 +1,6 @@
 # Monday Coffee - Expansion Analysis | SQL Project
 
+![Database](https://github.com/MsSam08/Structured-Query-Language-SQL-Projects/blob/main/Monday%20Coffee%20Business%20Expansion%20project/1.png)
 ## About This Project
 
 Monday Coffee is a fictional coffee brand that has been selling its products online across multiple Indian cities since January 2023. In this project, I used SQL to analyse their sales data and identify the top three cities in India best suited for opening new physical coffee shop locations.
