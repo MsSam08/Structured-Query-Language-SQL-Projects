@@ -86,7 +86,9 @@ LEFT JOIN sales AS s
 GROUP BY p.product_name
 ORDER BY total_orders DESC;
 ```
+Data Output:
 
+![Database](https://github.com/MsSam08/Structured-Query-Language-SQL-Projects/blob/main/Monday%20Coffee%20Business%20Expansion%20project/QUES%203.png)
 ---
 
 ### Q4. Average Sales Amount per City
@@ -109,7 +111,9 @@ JOIN city AS ci
 GROUP BY ci.city_name
 ORDER BY total_revenue DESC;
 ```
+Data Output:
 
+![Database](https://github.com/MsSam08/Structured-Query-Language-SQL-Projects/blob/main/Monday%20Coffee%20Business%20Expansion%20project/QUES%204.png)
 ---
 
 ### Q5. City Population and Estimated Coffee Consumers
@@ -141,7 +145,8 @@ FROM city_table AS ct
 JOIN customers_table AS cust
     ON ct.city_name = cust.city_name;
 ```
-
+Data Output:
+![Database](https://github.com/MsSam08/Structured-Query-Language-SQL-Projects/blob/main/Monday%20Coffee%20Business%20Expansion%20project/QUES%205.png)
 ---
 
 ### Q6. Top 3 Selling Products by City
@@ -169,7 +174,9 @@ FROM (
 ) AS ranked
 WHERE rank <= 3;
 ```
+Data Output:
 
+![Database](https://github.com/MsSam08/Structured-Query-Language-SQL-Projects/blob/main/Monday%20Coffee%20Business%20Expansion%20project/QUES%205.png)
 ---
 
 ### Q7. Unique Customers per City
@@ -187,7 +194,9 @@ WHERE s.product_id IN (1,2,3,4,5,6,7,8,9,10,11,12,13,14)
 GROUP BY ci.city_name
 ORDER BY unique_customers DESC;
 ```
+Data Output:
 
+![Database](https://github.com/MsSam08/Structured-Query-Language-SQL-Projects/blob/main/Monday%20Coffee%20Business%20Expansion%20project/QUES%207.png)
 ---
 
 ### Q8. Average Sale vs Average Rent per Customer
@@ -228,7 +237,9 @@ JOIN city_sales AS cs
     ON cr.city_name = cs.city_name
 ORDER BY cs.avg_sale_per_customer DESC;
 ```
+Data Output:
 
+![Database](https://github.com/MsSam08/Structured-Query-Language-SQL-Projects/blob/main/Monday%20Coffee%20Business%20Expansion%20project/QUES%208.png)
 ---
 
 ### Q9. Monthly Sales Growth Rate
@@ -274,7 +285,9 @@ FROM growth_ratio
 WHERE last_month_sale IS NOT NULL
 ORDER BY city_name, year, month;
 ```
+Data Output:
 
+![Database](https://github.com/MsSam08/Structured-Query-Language-SQL-Projects/blob/main/Monday%20Coffee%20Business%20Expansion%20project/QUES%209.png)
 ---
 
 ### Q10. Market Potential Analysis
@@ -320,7 +333,7 @@ JOIN city_sales AS cs
     ON cr.city_name = cs.city_name
 ORDER BY cs.total_revenue DESC;
 ```
-
+![Database](https://github.com/MsSam08/Structured-Query-Language-SQL-Projects/blob/main/Monday%20Coffee%20Business%20Expansion%20project/QUES%2010.png)
 ---
 
 ## Recommendations
