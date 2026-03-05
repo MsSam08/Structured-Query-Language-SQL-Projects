@@ -177,7 +177,7 @@ WHERE rank <= 3;
 ```
 Data Output:
 
-![Database](https://github.com/MsSam08/Structured-Query-Language-SQL-Projects/blob/main/Monday%20Coffee%20Business%20Expansion%20project/QUES%205.png)
+![Database](https://github.com/MsSam08/Structured-Query-Language-SQL-Projects/blob/main/Monday%20Coffee%20Business%20Expansion%20project/QUES%206.png)
 ---
 
 ### Q7. Unique Customers per City
