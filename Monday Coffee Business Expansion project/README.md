@@ -46,7 +46,7 @@ SELECT
 FROM city
 ORDER BY coffee_consumers_in_millions DESC;
 ```
-
+![Database](https://github.com/MsSam08/Structured-Query-Language-SQL-Projects/blob/main/Monday%20Coffee%20Business%20Expansion%20project/QUES%201.png)
 ---
 
 ### Q2. Total Revenue from Coffee Sales
