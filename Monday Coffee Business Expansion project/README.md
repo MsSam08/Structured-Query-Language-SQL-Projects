@@ -146,6 +146,7 @@ JOIN customers_table AS cust
     ON ct.city_name = cust.city_name;
 ```
 Data Output:
+
 ![Database](https://github.com/MsSam08/Structured-Query-Language-SQL-Projects/blob/main/Monday%20Coffee%20Business%20Expansion%20project/QUES%205.png)
 ---
 
