@@ -43,55 +43,55 @@ The database consists of six interrelated tables:
 CREATE DATABASE library_db;
 
 CREATE TABLE branch (
-    branch_id     VARCHAR(10) PRIMARY KEY,
-    manager_id    VARCHAR(10),
+    branch_id VARCHAR(10) PRIMARY KEY,
+    manager_id VARCHAR(10),
     branch_address VARCHAR(30),
-    contact_no    VARCHAR(15)
+    contact_no VARCHAR(15)
 );
 
 CREATE TABLE employees (
-    emp_id    VARCHAR(10) PRIMARY KEY,
-    emp_name  VARCHAR(30),
-    position  VARCHAR(30),
-    salary    DECIMAL(10,2),
+    emp_id VARCHAR(10) PRIMARY KEY,
+    emp_name VARCHAR(30),
+    position VARCHAR(30),
+    salary DECIMAL(10,2),
     branch_id VARCHAR(10),
     FOREIGN KEY (branch_id) REFERENCES branch(branch_id)
 );
 
 CREATE TABLE members (
-    member_id      VARCHAR(10) PRIMARY KEY,
-    member_name    VARCHAR(30),
+    member_id VARCHAR(10) PRIMARY KEY,
+    member_name VARCHAR(30),
     member_address VARCHAR(30),
-    reg_date       DATE
+    reg_date DATE
 );
 
 CREATE TABLE books (
-    isbn         VARCHAR(50) PRIMARY KEY,
-    book_title   VARCHAR(80),
-    category     VARCHAR(30),
+    isbn VARCHAR(50) PRIMARY KEY,
+    book_title VARCHAR(80),
+    category VARCHAR(30),
     rental_price DECIMAL(10,2),
-    status       VARCHAR(10),
-    author       VARCHAR(30),
-    publisher    VARCHAR(30)
+    status VARCHAR(10),
+    author VARCHAR(30),
+    publisher VARCHAR(30)
 );
 
 CREATE TABLE issued_status (
-    issued_id         VARCHAR(10) PRIMARY KEY,
-    issued_member_id  VARCHAR(30),
-    issued_book_name  VARCHAR(80),
-    issued_date       DATE,
-    issued_book_isbn  VARCHAR(50),
-    issued_emp_id     VARCHAR(10),
+    issued_id VARCHAR(10) PRIMARY KEY,
+    issued_member_id VARCHAR(30),
+    issued_book_name VARCHAR(80),
+    issued_date DATE,
+    issued_book_isbn VARCHAR(50),
+    issued_emp_id VARCHAR(10),
     FOREIGN KEY (issued_member_id) REFERENCES members(member_id),
-    FOREIGN KEY (issued_emp_id)    REFERENCES employees(emp_id),
+    FOREIGN KEY (issued_emp_id) REFERENCES employees(emp_id),
     FOREIGN KEY (issued_book_isbn) REFERENCES books(isbn)
 );
 
 CREATE TABLE return_status (
-    return_id        VARCHAR(10) PRIMARY KEY,
-    issued_id        VARCHAR(30),
+    return_id VARCHAR(10) PRIMARY KEY,
+    issued_id VARCHAR(30),
     return_book_name VARCHAR(80),
-    return_date      DATE,
+    return_date DATE,
     return_book_isbn VARCHAR(50),
     FOREIGN KEY (return_book_isbn) REFERENCES books(isbn)
 );
@@ -190,8 +190,8 @@ SELECT
     b.*,
     e2.emp_name AS manager_name
 FROM employees AS e1
-JOIN branch AS b      ON e1.branch_id = b.branch_id
-JOIN employees AS e2  ON e2.emp_id = b.manager_id;
+JOIN branch AS b ON e1.branch_id = b.branch_id
+JOIN employees AS e2 ON e2.emp_id = b.manager_id;
 ```
 
 ### Task 11: Create a Table of Premium-Priced Books
@@ -224,8 +224,8 @@ SELECT
     ist.issued_date,
     CURRENT_DATE - ist.issued_date AS days_overdue
 FROM issued_status AS ist
-JOIN members AS m       ON m.member_id = ist.issued_member_id
-JOIN books AS bk        ON bk.isbn = ist.issued_book_isbn
+JOIN members AS m ON m.member_id = ist.issued_member_id
+JOIN books AS bk ON bk.isbn = ist.issued_book_isbn
 LEFT JOIN return_status AS rs ON rs.issued_id = ist.issued_id
 WHERE rs.return_date IS NULL
   AND (CURRENT_DATE - ist.issued_date) > 30
@@ -237,13 +237,13 @@ ORDER BY days_overdue DESC;
 
 ```sql
 CREATE OR REPLACE PROCEDURE add_return_records(
-    p_return_id    VARCHAR(10),
-    p_issued_id    VARCHAR(10),
+    p_return_id VARCHAR(10),
+    p_issued_id VARCHAR(10),
     p_book_quality VARCHAR(10)
 )
 LANGUAGE plpgsql AS $$
 DECLARE
-    v_isbn      VARCHAR(50);
+    v_isbn VARCHAR(50);
     v_book_name VARCHAR(80);
 BEGIN
     INSERT INTO return_status(return_id, issued_id, return_date, book_quality)
@@ -274,10 +274,10 @@ SELECT
     COUNT(rs.return_id)   AS books_returned,
     SUM(bk.rental_price)  AS total_revenue
 FROM issued_status AS ist
-JOIN employees AS e    ON e.emp_id = ist.issued_emp_id
-JOIN branch AS b       ON e.branch_id = b.branch_id
+JOIN employees AS e ON e.emp_id = ist.issued_emp_id
+JOIN branch AS b ON e.branch_id = b.branch_id
 LEFT JOIN return_status AS rs ON rs.issued_id = ist.issued_id
-JOIN books AS bk       ON ist.issued_book_isbn = bk.isbn
+JOIN books AS bk ON ist.issued_book_isbn = bk.isbn
 GROUP BY b.branch_id, b.manager_id;
 ```
 
@@ -301,7 +301,7 @@ SELECT
     COUNT(ist.issued_id) AS books_processed
 FROM issued_status AS ist
 JOIN employees AS e ON e.emp_id = ist.issued_emp_id
-JOIN branch AS b    ON e.branch_id = b.branch_id
+JOIN branch AS b ON e.branch_id = b.branch_id
 GROUP BY e.emp_name, b.branch_id, b.branch_address
 ORDER BY books_processed DESC
 LIMIT 3;
@@ -315,7 +315,7 @@ SELECT
     COUNT(ist.issued_id) AS times_issued_damaged
 FROM issued_status AS ist
 JOIN members AS m ON m.member_id = ist.issued_member_id
-JOIN books AS bk  ON bk.isbn = ist.issued_book_isbn
+JOIN books AS bk ON bk.isbn = ist.issued_book_isbn
 WHERE bk.status = 'damaged'
 GROUP BY m.member_name, bk.book_title
 HAVING COUNT(ist.issued_id) > 2
@@ -327,10 +327,10 @@ ORDER BY times_issued_damaged DESC;
 
 ```sql
 CREATE OR REPLACE PROCEDURE issue_book(
-    p_issued_id         VARCHAR(10),
-    p_issued_member_id  VARCHAR(30),
-    p_issued_book_isbn  VARCHAR(30),
-    p_issued_emp_id     VARCHAR(10)
+    p_issued_id VARCHAR(10),
+    p_issued_member_id VARCHAR(30),
+    p_issued_book_isbn VARCHAR(30),
+    p_issued_emp_id VARCHAR(10)
 )
 LANGUAGE plpgsql AS $$
 DECLARE
@@ -365,7 +365,7 @@ CALL issue_book('IS156', 'C108', '978-0-375-41398-8', 'E104');
 CREATE TABLE overdue_fines AS
 SELECT
     ist.issued_member_id AS member_id,
-    COUNT(*)             AS overdue_books,
+    COUNT(*) AS overdue_books,
     SUM((CURRENT_DATE - ist.issued_date) * 0.50) AS total_fine
 FROM issued_status AS ist
 LEFT JOIN return_status AS rs ON rs.issued_id = ist.issued_id
